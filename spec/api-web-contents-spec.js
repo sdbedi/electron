@@ -30,9 +30,7 @@ describe('webContents module', () => {
 
   afterEach(() => closeWindow(w).then(() => { w = null }))
 
-  // TODO(alexeykuzmin): Disabled during Ch63 upgrade.
-  // Fix it and enable back.
-  xdescribe('getAllWebContents() API', () => {
+  describe('getAllWebContents() API', () => {
     it('returns an array of web contents', (done) => {
       w.webContents.on('devtools-opened', () => {
         const all = webContents.getAllWebContents().sort((a, b) => {

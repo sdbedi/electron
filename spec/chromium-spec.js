@@ -484,9 +484,7 @@ describe('chromium feature', () => {
     })
   })
 
-  // TODO(alexeykuzmin): Disabled during Ch63 upgrade.
-  // Fix it and enable back.
-  xdescribe('window.opener access from <webview>', () => {
+  describe('window.opener access from <webview>', () => {
     const scheme = 'other'
     const srcPath = `${fixtures}/pages/webview-opener-postMessage.html`
     const pageURL = `file://${fixtures}/pages/window-opener-location.html`
@@ -608,9 +606,7 @@ describe('chromium feature', () => {
       b = window.open(`file://${fixtures}/pages/window-opener-postMessage.html`, '', 'show=no')
     })
 
-    // TODO(alexeykuzmin): Disabled during Ch63 upgrade.
-    // Fix it and enable back.
-    xit('supports windows opened from a <webview>', (done) => {
+    it('supports windows opened from a <webview>', (done) => {
       const webview = new WebView()
       webview.addEventListener('console-message', (e) => {
         webview.remove()
@@ -711,9 +707,7 @@ describe('chromium feature', () => {
       }
     })
 
-    // TODO(alexeykuzmin): Disabled during Ch63 upgrade.
-    // Fix it and enable back.
-    xit('Worker has node integration with nodeIntegrationInWorker', (done) => {
+    it('Worker has node integration with nodeIntegrationInWorker', (done) => {
       let webview = new WebView()
       webview.addEventListener('ipc-message', (e) => {
         assert.equal(e.channel, 'object function object function')
@@ -743,9 +737,7 @@ describe('chromium feature', () => {
       }
     })
 
-    // TODO(alexeykuzmin): Disabled during Ch63 upgrade.
-    // Fix it and enable back.
-    xit('SharedWorker has node integration with nodeIntegrationInWorker', (done) => {
+    it('SharedWorker has node integration with nodeIntegrationInWorker', (done) => {
       let webview = new WebView()
       webview.addEventListener('console-message', (e) => {
         console.log(e)
